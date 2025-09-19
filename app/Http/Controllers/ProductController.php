@@ -10,9 +10,18 @@ class ProductController extends Controller
      * Display a listing of the resource.
      */
     public function index()
-    {
-        //
+        {
+            {
+    $products = Product::paginate(12);
+    return view('products.index', compact('products'));
     }
+
+    public function show($slug)
+    {
+    $product = Product::where('slug', $slug)->firstOrFail();
+    return view('products.show', compact('product'));
+    }
+        }
 
     /**
      * Show the form for creating a new resource.
