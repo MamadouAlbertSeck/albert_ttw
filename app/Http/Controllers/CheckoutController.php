@@ -64,6 +64,8 @@ class CheckoutController extends Controller
                     'quantity' => $item['quantity'],
                     'price' => $item['price'],
                 ]);
+
+                Product::where('id', $id)->decrement('stock_quantity', $item['quantity']);
             }
 
             // Ici préparer invoice / redirection vers prestataire paiement
