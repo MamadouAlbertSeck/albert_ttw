@@ -42,7 +42,9 @@
             @foreach(\App\Models\Product::latest()->take(5)->get() as $product)
             <tr class="border-t">
                 <td class="p-2">{{ $product->id }}</td>
-                <td class="p-2">{{ $product->name }}</td>
+                <td class="p-2">
+                    <a href="{{ route('admin.products.show', $product) }}" class="text-blue-600 hover:underline">    
+                {{ $product->name }}</td>
                 <td class="p-2">{{ number_format($product->price,2) }}</td>
                 <td class="p-2">{{ $product->stock_quantity }}</td>
                 <td class="p-2 flex gap-2">

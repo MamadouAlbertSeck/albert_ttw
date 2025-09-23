@@ -19,9 +19,17 @@ Route::get('/', [ProductController::class, 'index'])->name('home');
 Route::get('/product/{slug}', [ProductController::class,'show'])->name('product.show'); 
 
 //Cart
+// Ajouter au panier
 Route::post('/cart/add/{id}', [CartController::class, 'add'])->name('cart.add'); 
+
+// Afficher le panier
 Route::get('/cart', [CartController::class, 'index'])->name('cart.index');
+
+// Mettre à jour les quantités
 Route::post('/cart/update', [CartController::class, 'update'])->name('cart.update');
+
+// Supprimer un produit
+Route::post('/cart/remove/{id}', [CartController::class, 'remove'])->name('cart.remove');
 
 //Checkout
 Route::get('/checkout', [CheckoutController::class, 'index'])->name('checkout.index'); 
