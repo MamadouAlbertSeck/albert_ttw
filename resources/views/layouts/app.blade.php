@@ -11,6 +11,7 @@
 </head>
 <body>
     <!-- Header -->
+     @if(!Request::is('admin/*'))
     <header class="site-header">
         <div class="container">
             <a href="{{ route('home') }}" class="brand">ALBERT TTW</a>
@@ -24,6 +25,7 @@
             </nav>
         </div>
     </header>
+    @endif
 
     <!-- Flash message -->
     @if(session('success'))
@@ -33,12 +35,14 @@
     </div>
     @endif
 
+
     <!-- Main content -->
     <main class="container">
         @yield('content')
     </main>
 
     <!-- Footer -->
+    @if(!Request::is('admin/*'))
     <footer class="site-footer">
         <div class="container footer-content">
             <div class="footer-col">
@@ -65,6 +69,7 @@
             &copy; {{ date('Y') }} ALBERT TTW. Tous droits réservés.
         </div>
     </footer>
+    @endif
 </body>
 
 <style>
