@@ -1,5 +1,6 @@
 {{-- resources/views/admin/products/edit.blade.php --}}
-@extends('layouts.app')
+
+@extends('layouts.admin')
 
 @section('title', 'Modifier Produit')
 

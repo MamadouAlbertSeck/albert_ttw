@@ -7,6 +7,9 @@
     <title>@yield('title','Admin')</title>
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
     <script src="{{ asset('js/script.js') }}" defer></script>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+    @stack('styles')
+
 </head>
 <body>
 
@@ -14,7 +17,7 @@
 <header class="admin-header">
     <div class="brand">
         <a href="{{ route('admin.dashboard') }}">
-          <img src="{{ asset('images/logo.png') }}" alt="ALBERT TTW" class="logo">
+          ALBERT TTW
         </a>
     </div>
 
@@ -92,7 +95,7 @@ body {
   overflow-x: hidden;
 }
 .admin-header { 
-  background:#333; 
+  background:gray; 
   color:#fff; 
   display:flex; 
   justify-content:space-between; /* met tout ce qui reste à droite */ 
@@ -108,18 +111,12 @@ body {
   text-align:center;
 }
 
-.admin-header .brand img.logo {
-    height: 50px;       /* ajuste la taille du logo */
-    width: auto;
-}
-
-
 .admin-header .logout{
   margin-left:auto;
 }
 
 .admin-header .logout button {
-  background-color: #9e9e9eff;      /* rouge vif */
+  background-color: #3f3e3eff;      /* rouge vif */
   color: #fff;
   border: none;
   padding: 6px 12px;
@@ -135,9 +132,13 @@ body {
 
 .admin-header a { 
   margin-top: 200px;
-  color:#fff; 
+  color:black; 
   text-decoration:none; 
-  font-weight:bold; }
+  font-weight:bold; 
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 2rem;
+  text-transform: uppercase;
+}
 
 .admin-container { 
   display:flex; 
